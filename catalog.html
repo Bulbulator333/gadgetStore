@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GadgetStore | Каталог</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка (такая же, как на главной) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Gadget<span>Store</span></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html" class="active">Каталог</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html" class="cart-icon-link">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-counter">0</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Основной контент каталога -->
+    <main class="catalog">
+        <div class="container">
+            <h1>Каталог товаров</h1>
+            
+            <!-- Фильтры -->
+            <div class="filters">
+                <div class="filter-group">
+                    <h3>Категории</h3>
+                    <ul class="category-filters">
+                        <li>
+                            <input type="radio" id="all" name="category" value="all" checked>
+                            <label for="all">Все товары</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="phones" name="category" value="phones">
+                            <label for="phones">Смартфоны</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="laptops" name="category" value="laptops">
+                            <label for="laptops">Ноутбуки</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="headphones" name="category" value="headphones">
+                            <label for="headphones">Наушники</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Цена</h3>
+                    <div class="price-range">
+                        <input type="range" id="priceFilter" min="0" max="100000" value="100000" step="1000">
+                        <span id="priceValue">До 100 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Список товаров -->
+            <div class="product-grid" id="catalog-container">
+                <!-- Товары будут загружаться через JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер (такой же, как на главной) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>GadgetStore - лучший выбор техники с 2020 года</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p>Email: info@gadgetstore.ru</p>
+                <p>Телефон: +7 (123) 456-78-90</p>
+            </div>
+            <div class="footer-column">
+                <h3>Подписка</h3>
+                <input type="email" placeholder="Ваш email">
+                <button>Подписаться</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+</body>
+</html>

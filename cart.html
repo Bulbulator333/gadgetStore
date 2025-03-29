@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GadgetStore | Корзина</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка (такая же) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Gadget<span>Store</span></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html" class="cart-icon-link">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-counter">0</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Основной контент корзины -->
+    <main class="cart-page">
+        <div class="container">
+            <h1>Ваша корзина</h1>
+            
+            <div class="cart-wrapper">
+                <!-- Список товаров -->
+                <div class="cart-items" id="cart-items">
+                    <!-- Товары будут добавляться через JS -->
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Ваша корзина пуста</p>
+                        <a href="catalog.html" class="cta-button">Перейти в каталог</a>
+                    </div>
+                </div>
+                
+                <!-- Итоговая информация -->
+                <div class="cart-summary">
+                    <h3>Итого</h3>
+                    <div class="summary-row">
+                        <span>Товары</span>
+                        <span id="total-items">0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Общая сумма</span>
+                        <span id="total-price">0 ₽</span>
+                    </div>
+                    <button id="checkout-btn" class="checkout-btn">Оформить заказ</button>
+                    <p class="free-shipping">Бесплатная доставка при заказе от 10 000 ₽</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер (такой же) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>GadgetStore - лучший выбор техники с 2020 года</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p>Email: info@gadgetstore.ru</p>
+                <p>Телефон: +7 (123) 456-78-90</p>
+            </div>
+            <div class="footer-column">
+                <h3>Подписка</h3>
+                <input type="email" placeholder="Ваш email">
+                <button>Подписаться</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GadgetStore | Техника будущего</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка с навигацией -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Gadget<span>Store</span></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html" class="cart-icon-link">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-counter">0</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="container">
+            <h1>Новейшие гаджеты 2025</h1>
+            <p>Бесплатная доставка при заказе от 10 000 ₽</p>
+            <button class="cta-button">В каталог</button>
+        </div>
+    </section>
+
+    <!-- Блок категорий -->
+    <section class="categories">
+        <div class="container">
+            <h2>Категории</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="phones">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Смартфоны</h3>
+                </div>
+                <div class="category-card" data-category="laptops">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Ноутбуки</h3>
+                </div>
+                <div class="category-card" data-category="headphones">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Наушники</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные товары -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Популярные товары</h2>
+            <div class="product-grid" id="product-container">
+                <!-- Товары подгружаются через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>GadgetStore - лучший выбор техники с 2020 года</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p>Email: gadgetstore@gmail.com</p>
+                <p>Телефон: +7 (123) 456-78-90</p>
+            </div>
+            <div class="footer-column">
+                <h3>Подписка</h3>
+                <input type="email" placeholder="Ваш email">
+                <button>Подписаться</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
