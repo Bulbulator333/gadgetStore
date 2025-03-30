@@ -1,4 +1,7 @@
-/* Базовые стили */
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary: #4e54c8;
     --secondary: #8f94fb;
@@ -94,7 +97,7 @@ body {
     font-size: 0.7rem;
 }
 
-/* Герой-секция */
+/* Главная секция */
 .hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
@@ -170,7 +173,7 @@ body {
     font-size: 1.3rem;
 }
 
-/* Товары */
+/* поп товары */
 .featured-products {
     padding: 60px 0;
 }
@@ -579,7 +582,7 @@ body {
 }
 
 
-/* Стили для ссылки-иконки корзины */
+/* Стили для иконки корзины */
 .cart-icon-link {
     text-decoration: none;
     color: inherit;

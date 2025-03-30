@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Шапка (такая же) -->
     <header class="header">
         <div class="container">
             <div class="logo">Gadget<span>Store</span></div>
@@ -16,8 +15,8 @@
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="catalog.html">Каталог</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#footer">О нас</a></li>
+                    <li><a href="#footer">Контакты</a></li>
                 </ul>
             </nav>
             <a href="cart.html" class="cart-icon-link">
@@ -29,15 +28,14 @@
         </div>
     </header>
 
-    <!-- Основной контент корзины -->
     <main class="cart-page">
         <div class="container">
             <h1>Ваша корзина</h1>
             
             <div class="cart-wrapper">
-                <!-- Список товаров -->
+
                 <div class="cart-items" id="cart-items">
-                    <!-- Товары будут добавляться через JS -->
+
                     <div class="empty-cart">
                         <i class="fas fa-shopping-cart"></i>
                         <p>Ваша корзина пуста</p>
@@ -45,7 +43,6 @@
                     </div>
                 </div>
                 
-                <!-- Итоговая информация -->
                 <div class="cart-summary">
                     <h3>Итого</h3>
                     <div class="summary-row">
@@ -63,8 +60,7 @@
         </div>
     </main>
 
-    <!-- Футер (такой же) -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-column">
                 <h3>О нас</h3>

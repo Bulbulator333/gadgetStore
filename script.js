@@ -1,4 +1,3 @@
-// Данные товаров
 const products = [
     {
         id: 1,
@@ -9,28 +8,28 @@ const products = [
     },
     {
         id: 2,
-        name: "Ноутбук SuperBook",
+        name: "Ноутбук Super",
         price: 65990,
         category: "laptops",
         image: "https://cdn.kns.ru/linkpics/huawei-matebook-d-16-53013yly_kod_863915-v1.jpg"
     },
     {
         id: 3,
-        name: "Наушники SoundMax",
+        name: "Наушники Krutoi Zvuk",
         price: 12990,
         category: "headphones",
         image: "https://i-store.net/_sh/73/7328.jpg"
     },
     {
         id: 4,
-        name: "Смартфон Gamma 12",
+        name: "Смартфон Tecno 10",
         price: 42990,
         category: "phones",
         image: "https://apple-nova.ru/files/item/77yw57gk0epjegf5o3fm9fss2takhc7a%20(1).jpg"
     },
     {
         id: 5,
-        name: "Ноутбук Ultra Sim",
+        name: "Ноутбук Ultra",
         price: 78990,
         category: "laptops",
         image: "https://www.huawei-networks.ru/upload/iblock/104/1044ea67f32075d39ba34fc299845086.jpg"
@@ -43,6 +42,7 @@ const products = [
         image: "https://microless.com/cdn/products/54f30043b9eed8862dfa5d2576a93a5a-hi.jpg"
     }
 ];
+
 
 
 // DOM элементы
@@ -80,7 +80,7 @@ function renderProducts() {
 document.querySelectorAll('.category-card').forEach(card => {
     card.addEventListener('click', function() {
         const category = this.getAttribute('data-category');
-        alert(`Фильтрация по категории: ${category}`);
+        alert(`Фильтрация по категории: ${category} *перейдите в каталог*`);
     });
 });
 
@@ -93,17 +93,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // корзина
 function addToCart(e) {
-    // Получаем ID товара из data-атрибута кнопки
+ 
     const productId = parseInt(e.target.getAttribute('data-id'));
     
-    // Находим товар в массиве products
+    // Находим товар в массиве
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
     // Загружаем текущую корзину из LocalStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Проверяем, есть ли товар уже в корзине
+
     const existingItem = cart.find(item => item.id === productId);
     
     if (existingItem) {
@@ -138,5 +138,10 @@ function updateCartCounter() {
     });
 }
 
-// Инициализация при загрузке страницы
+const subscribeBtn = document.querySelector('.subscribe')
+subscribeBtn.addEventListener('click', function() {
+    alert('Спасибо за подписку!')
+})
+
+
 document.addEventListener('DOMContentLoaded', updateCartCounter);

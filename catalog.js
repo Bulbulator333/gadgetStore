@@ -1,4 +1,3 @@
-// Данные товаров
 const catalogProducts = [
     {
         id: 1,
@@ -9,42 +8,42 @@ const catalogProducts = [
     },
     {
         id: 2,
-        name: "Ноутбук SuperBook",
+        name: "Ноутбук Super",
         price: 65990,
         category: "laptops",
         image: "https://cdn.kns.ru/linkpics/huawei-matebook-d-16-53013yly_kod_863915-v1.jpg"
     },
     {
         id: 3,
-        name: "Наушники SoundMax",
+        name: "Наушники Krutoi Zvuk",
         price: 12990,
         category: "headphones",
         image: "https://i-store.net/_sh/73/7328.jpg"
     },
     {
         id: 4,
-        name: "Смартфон Gamma 12",
+        name: "Смартфон Tecno 10",
         price: 42990,
         category: "phones",
         image: "https://apple-nova.ru/files/item/77yw57gk0epjegf5o3fm9fss2takhc7a%20(1).jpg"
     },
     {
         id: 5,
-        name: "Ноутбук Ultra Sim",
+        name: "Ноутбук Ultra",
         price: 78990,
         category: "laptops",
         image: "https://www.huawei-networks.ru/upload/iblock/104/1044ea67f32075d39ba34fc299845086.jpg"
     },
     {
         id: 6,
-        name: "Наушники ProBass",
+        name: "Наушники Picun f6",
         price: 18990,
         category: "headphones",
         image: "https://microless.com/cdn/products/54f30043b9eed8862dfa5d2576a93a5a-hi.jpg"
     }
 ];
 
-// DOM элементы
+
 const catalogContainer = document.getElementById('catalog-container');
 const categoryFilters = document.querySelectorAll('input[name="category"]');
 const priceFilter = document.getElementById('priceFilter');
@@ -88,18 +87,17 @@ function filterProducts() {
     
     let filteredProducts = catalogProducts;
     
-    // Фильтр по категории
+
     if (selectedCategory !== 'all') {
         filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
     }
     
-    // Фильтр по цене
+
     filteredProducts = filteredProducts.filter(product => product.price <= maxPrice);
     
     renderCatalog(filteredProducts);
 }
 
-// Обработчики событий
 categoryFilters.forEach(filter => {
     filter.addEventListener('change', filterProducts);
 });
@@ -111,10 +109,9 @@ priceFilter.addEventListener('input', function() {
 
 // Инициализация
 document.addEventListener('DOMContentLoaded', () => {
-    // Показываем все товары при загрузке
+ 
     renderCatalog(catalogProducts);
     
-    // Обновляем значение цены
     priceValue.textContent = `До ${parseInt(priceFilter.value).toLocaleString()} ₽`;
 });
 
@@ -122,35 +119,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Функция добавления в корзину (такая же, как на главной)
 function addToCart(e) {
-    // Получаем ID товара из data-атрибута кнопки
+
     const productId = parseInt(e.target.getAttribute('data-id'));
     
-    // Находим товар в массиве products
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
-    // Загружаем текущую корзину из LocalStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Проверяем, есть ли товар уже в корзине
     const existingItem = cart.find(item => item.id === productId);
     
     if (existingItem) {
-        existingItem.quantity += 1; // Увеличиваем количество
+        existingItem.quantity += 1;
     } else {
-        cart.push({ // Добавляем новый товар
+        cart.push({ 
             ...product,
             quantity: 1
         });
     }
     
-    // Сохраняем обновлённую корзину
+
     localStorage.setItem('cart', JSON.stringify(cart));
     
-    // Обновляем счётчик товаров в шапке
+
     updateCartCounter();
     
-    // Анимация кнопки
     e.target.textContent = "Добавлено!";
     e.target.style.backgroundColor = "#28a745";
     setTimeout(() => {
